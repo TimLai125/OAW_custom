@@ -25,12 +25,15 @@
     'author': 'eHanse IT and Consulting UG',
     'website': 'https://ehanse.de',
     'category': 'Accounting',
-    'depends': ["account",],
+    'depends': ["account",
+                "sale",],
     'description': """
 * Makes adjustments on quotation print output to show 1.case number 2.table 3.replace comments
     """,
     'data': [
-        'views/report_saleorder.xml',
+        'report/sale_order_report.xml',
+    ],
+    "qweb": [
     ],
     'installable': True,
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <report
+        id="custom_report_quotation_sinotrading"
+        model="sale.order"
+        string="Sinoeast Quotation"
+        report_type="qweb-pdf"
+        name="oa_company_quotation_report_sino_adjust.report_saleorder_document_z3"
+        file="oa_company_quotation_report_sino_adjust.report_saleorder_document_z3"
+    />
+
+    <template id="report_saleorder_document_z3">
+        <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'oa_company_quotation_report_sino_adjust.report_saleorder_document')"/>
+        </t>
+    </t>
+    </template>
+
+    <template id="report_saleorder_document">
+        <t t-call="oa_company_quotation_report_sino_adjust.external_layout">
+            <div class="page">
+                <div class="row">
+                    <p>Body</p>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="external_layout">
+        <t t-call="oa_company_quotation_report_sino_adjust.external_layout_header" />
+        <t t-raw="0" />
+        <t t-call="oa_company_quotation_report_sino_adjust.external_layout_footer" />
+    </template>
+
+    <template id="external_layout_header">
+        <div class="header">
+            <div class="row">
+                <span>Header</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="external_layout_footer">
+        <div class="footer">
+            <div class="row">
+                <span>Footer</span>
+            </div>
+        </div>
+    </template>
+
+</data>
+</openerp>
